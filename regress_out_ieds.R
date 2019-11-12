@@ -8,7 +8,7 @@ library(AnalyzeFMRI)
 ########################################################
 ## This first part makes the regressors that you need ##
 ########################################################
-input<-"/Users/ellieshamshiri/Desktop/Regressing_IEDs/eegFmri/patients/EmHi_20121109/session_1.cond.mat" # this is your conditions file (SPM compatible)
+input<-"/Users/ellieshamshiri/Desktop/Regressing_IEDs/eegFmri/patients/Sub_01/session_1.cond.mat" # this is your conditions file (SPM compatible)
 RT<-1/16 # this is your RT
 time<-296 # this the number of timepoints you have/volumes
 tr<-2.16 # this is your TR (in seconds)
@@ -110,9 +110,9 @@ spike.reg<-function(input=input_cond,RT,time,tr){
 ######################################################################
 ## This second part regressors out those regressors from the images ##
 ######################################################################
-input_fmri <- list.files("/Users/ellieshamshiri/Desktop/Regressing_IEDs/eegFmri/patients/EmHi_20121109/session_1/fmri/",pattern = "^filt",full.names = T)
+input_fmri <- list.files("/Users/ellieshamshiri/Desktop/Regressing_IEDs/eegFmri/patients/Sub_01/session_1/fmri/",pattern = "^filt",full.names = T)
 files<-input_fmri # these are your preprocessed files
-reg<- "/Users/ellieshamshiri/Desktop/Regressing_IEDs/eegFmri/patients/EmHi_20121109/spike_regs_session_1.txt"
+reg<- "/Users/ellieshamshiri/Desktop/Regressing_IEDs/eegFmri/patients/Sub_01/spike_regs_session_1.txt"
 #basis <- #maybe you need to put this in?
 freq<-128 # this is your high pass freq #800
 tr<-2.16 # this is your tr
